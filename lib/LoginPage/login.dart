@@ -63,14 +63,14 @@ class _LoginPageState extends State<LoginPage> {
                     // Email label and input field
                     const Text(
                       'Email',
-                      style: TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 12.0),
                     ),
                     const SizedBox(height: 8), // Spacing between label and input
                     TextFormField(
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                        hintText: 'Enter your email',
+                        hintText: 'Enter your registered email',
                         border: OutlineInputBorder(),
                       ),
                       validator: (value) {
@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                     // Password label and input field
                     const Text(
                       'Password',
-                      style: TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 12.0),
                     ),
                     const SizedBox(height: 8), // Spacing between label and input
                     TextFormField(
@@ -124,7 +124,15 @@ class _LoginPageState extends State<LoginPage> {
 
                     ElevatedButton(
                       onPressed: _login,
+                      style: ButtonStyle(
+    backgroundColor: WidgetStateProperty.all<Color>(const Color.fromARGB(255, 199, 6, 6)), // Set the correct color
+     foregroundColor: WidgetStateProperty.all<Color>(const Color.fromARGB(255, 251, 250, 250)),
+  ),
                       child: const Text('Sign In'),
+                    ),
+                     const Text(
+                      '',
+                      style: TextStyle(fontSize: 16.0),
                     ),
                     // Text with hyperlink
                     RichText(
@@ -135,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                           TextSpan(
                             text: 'Set up now',
                             style: const TextStyle(
-                              color: Colors.blue,
+                              color: Colors.red,
                               decoration: TextDecoration.underline,
                               fontWeight: FontWeight.bold,
                             ),
